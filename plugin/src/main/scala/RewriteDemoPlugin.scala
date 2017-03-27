@@ -15,12 +15,17 @@ object RewriteDemoPlugin extends AutoPlugin {
     // scalaVersion
     "2.12.1",
     // ModuleID of your app
-    List("com.eed3si9n" %% "rewritedemo" % "0.1.0"),
+    List("com.eed3si9n" %% "rewritedemo" % "0.1.2"),
     // main class
     "sbtrewritedemo.RewriteApp")
 
   override def extraProjects: Seq[Project] =
-    List(sidedish.project)
+    List(sidedish.project
+      // extra settings
+      .settings(
+        // Resolve the app from sbt community repo.
+        resolvers += Resolver.bintrayIvyRepo("sbt", "sbt-plugin-releases")
+      ))
 
   override def projectSettings = Seq(
     rewritedemoOrigin := "example",

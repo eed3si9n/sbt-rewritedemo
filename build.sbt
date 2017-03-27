@@ -3,7 +3,7 @@ lazy val io = "org.scala-sbt" %% "io" % "1.0.0-M9"
 
 // These settings are used across all subprojects
 lazy val buildLevelSettings = Seq(
-  version in ThisBuild      := "0.1.0",
+  version in ThisBuild      := "0.1.2",
   organization in ThisBuild := "com.eed3si9n",
   description in ThisBuild  := "a demo project for sbt-sidedish",
   homepage in ThisBuild     := Some(url("https://github.com/eed3si9n/sbt-rewritedemo")),
@@ -30,6 +30,7 @@ lazy val app = (project in file("app"))
     libraryDependencies ++= List(scalafix, io),
     scalacOptions += "-Ywarn-unused-import",
     resolvers += Resolver.bintrayIvyRepo("scalameta", "maven"),
+    publishMavenStyle := false,
     bintrayRepository := (bintrayRepository in ThisBuild).value,
     bintrayPackage := (bintrayPackage in ThisBuild).value
   )
