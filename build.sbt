@@ -3,7 +3,7 @@ lazy val io = "org.scala-sbt" %% "io" % "1.0.0-M9"
 
 // These settings are used across all subprojects
 lazy val buildLevelSettings = Seq(
-  version in ThisBuild      := "0.1.2",
+  version in ThisBuild      := "0.1.3",
   organization in ThisBuild := "com.eed3si9n",
   description in ThisBuild  := "a demo project for sbt-sidedish",
   homepage in ThisBuild     := Some(url("https://github.com/eed3si9n/sbt-rewritedemo")),
@@ -43,7 +43,7 @@ lazy val sbtplugin = (project in file("plugin"))
     publishMavenStyle := false,
     scalaVersion := "2.10.6",
     crossScalaVersions := Seq("2.10.6"),
-    addSbtPlugin("com.eed3si9n" % "sbt-sidedish" % "0.1.0"),
+    addSbtPlugin("com.eed3si9n" % "sbt-sidedish" % "0.1.1"),
     bintrayRepository := (bintrayRepository in ThisBuild).value,
     bintrayPackage := (bintrayPackage in ThisBuild).value
   )

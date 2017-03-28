@@ -15,7 +15,7 @@ object RewriteDemoPlugin extends AutoPlugin {
     // scalaVersion
     "2.12.1",
     // ModuleID of your app
-    List("com.eed3si9n" %% "rewritedemo" % "0.1.2"),
+    List("com.eed3si9n" %% "rewritedemo" % "0.1.3"),
     // main class
     "sbtrewritedemo.RewriteApp")
 
